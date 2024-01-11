@@ -1,6 +1,6 @@
 #include "lfsr_lh2.h"
 #ifndef _MSC_VER
-#include "alloca.h"
+#include "malloc.h"
 #define clz(x) __builtin_clz(x)
 #else
 #include <intrin.h>
