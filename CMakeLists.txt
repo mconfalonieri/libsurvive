@@ -148,17 +148,10 @@ IF(UNIX)
 	endif()	    
 	
 ELSEIF(WIN32)
-  try_compile(HAS_GENERIC_SUPPORT ${CMAKE_BINARY_DIR} "${CMAKE_SOURCE_DIR}/useful_files/generic_test.c" OUTPUT_VARIABLE COMPILE_TEST             
-             COMPILE_DEFINITIONS "/std:c11")  
-  message("Has generic support ${HAS_GENERIC_SUPPORT}")
-  add_compile_options(/wd4244 /wd4996 /wd4018 /wd4101 /wd4477 /wd4068 /wd4217)
-  if(NOT HAS_GENERIC_SUPPORT)
+    # this edit had to be made to allow quasi-msys2 to work
     add_definitions("-DCOMPILER_HAS_NO_GENERIC_SUPPORT")
-  else()
-    add_compile_options(/std:c11)
-  endif()
-  set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-  set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+    set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 endif()
 
 include_directories(redist include/libsurvive include)
