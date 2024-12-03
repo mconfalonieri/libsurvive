@@ -1,3 +1,7 @@
+**NOTE** This is a forked repo with all the PRs applied up to Dec 3, 2024.
+
+
+
 # libsurvive [![Build and Test](https://github.com/cntools/libsurvive/workflows/Build%20and%20Test/badge.svg)](https://github.com/cntools/libsurvive/actions/workflows/cmake.yml)[![Build Nuget](https://github.com/cntools/libsurvive/workflows/Build%20Nuget/badge.svg)](https://github.com/cntools/libsurvive/actions/workflows/build_nuget.yml)[![Build Wheels](https://github.com/cntools/libsurvive/workflows/Build%20Wheels/badge.svg)](https://github.com/cntools/libsurvive/actions/workflows/build_wheels.yml)
 
 ![Logo](https://cloud.githubusercontent.com/assets/2748168/24084003/9095c98a-0cb8-11e7-88a3-575f9f4c7bb4.png)
@@ -70,6 +74,8 @@ For visualization, you can either download a binary of [websocketd](https://gith
 [![Watch video](https://img.youtube.com/vi/l4doRSXM0tU/0.jpg)](https://www.youtube.com/watch?v=l4doRSXM0tU)
 
 ## Windows
+
+> ⚠️ If `make.ps1` finishes too quickly, it may not have been executed correctly due to [execution-policy settings](https://stackoverflow.com/questions/64633727/how-to-fix-running-scripts-is-disabled-on-this-system). Please try running the script in PowerShell window.
 
 If you have `cmake` installed on your path you can simply run the `make.ps1` script by right clicking it and seleting `Run with PowerShell`.
 

@@ -39,7 +39,7 @@ OSG_INLINE double OGGetAbsoluteTime() {
 OSG_INLINE double OGGetFileTime(const char *file) {
 	FILETIME ft;
 
-	HANDLE h = CreateFile(file, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+	HANDLE h = CreateFileA(file, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
 
 	if (h == INVALID_HANDLE_VALUE)
 		return -1;
@@ -99,7 +99,7 @@ OSG_INLINE int OGGetSema(og_sema_t os) {
 	NTSTATUS Status;
 
 	if (!NtQuerySemaphore) {
-		NtQuerySemaphore = (_NtQuerySemaphore)GetProcAddress(GetModuleHandle("ntdll.dll"), "NtQuerySemaphore");
+		NtQuerySemaphore = (_NtQuerySemaphore)GetProcAddress(GetModuleHandleA("ntdll.dll"), "NtQuerySemaphore");
 		if (!NtQuerySemaphore) {
 			return -1;
 		}
